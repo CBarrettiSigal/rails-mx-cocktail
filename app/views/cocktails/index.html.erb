@@ -1,2 +1,20 @@
-<h1>Cocktails#index</h1>
-<p>Find me in app/views/cocktails/index.html.erb</p>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1475169969186-d1ae3d260f7b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80);">
+  <div class="container">
+    <h1>Welcome to <strong>Mx Cocktail</h1>
+    <p>Create Your Own Cocktail and Add Your Own Ingredients.</p>
+    <a class="btn btn-flat" href="#"><%= link_to "Get Started", new_cocktail_path %></a>
+  </div>
+</div>
+
+  <h1>Explore Our Current Cocktail Options</h1>
+  <div class="cocktail-cards">
+    <% @cocktails.each do |cocktail| %>
+      <% if cocktail.photo.attached? %>
+        <div class="cocktail-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path cocktail.photo.key, height: 300, width: 400, crop: :fill %>')">
+        <% else %>
+      <div class="cocktail-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/collection/9282742/<%= rand(1..200) %>)">
+      <% end %>
+        <%= link_to cocktail.name, cocktail_path(cocktail) %>
+      </div>
+    <% end %>
+  </div>

@@ -9,22 +9,21 @@ require 'open-uri'
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# url = 'https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list'
-# drinks = open(url).read
+# Ingredient.destroy_all
 
-# # ingredients = []
-# list = JSON.parse(drinks)
+  url = 'https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list'
+  list = JSON.parse(open(url).read)
 
-# list.each do |ing|
-#   puts "#{ing['strIngredient']}"
-# end
+ list["drinks"].each do |ing|
+   # puts ing['strIngredient1']
+ Ingredient.create(name: ing['strIngredient1'])
+ end
 
-# Ingredient.create(name: ing['strIngredient1'])
-# end
-Ingredient.destroy_all
 
-Ingredient.create(name: "lemon")
-Ingredient.create(name: "ice")
-Ingredient.create(name: "mint leaves")
-Ingredient.create(name: "cherry liquer")
-Ingredient.create(name: "egg yolk")
+# Ingredient.create(name: "Lemon")
+# Ingredient.create(name: "Ice")
+# Ingredient.create(name: "Mint Leaves")
+# Ingredient.create(name: "Cherry Liqueur")
+# Ingredient.create(name: "Egg Yolk")
+# Ingredient.create(name: "Bourbon")
+# Ingredient.create(name: "Tequila")
