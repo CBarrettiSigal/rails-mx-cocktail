@@ -1,0 +1,68 @@
+.ghost-btn {
+  border: 3px solid $red;
+  padding: 8px 24px;
+  border-radius: 50px;
+  transition: opacity 0.3s ease;
+  background-color: $light-gray;
+  a {
+   font-size: 18px;
+   font-weight: bold;
+   color: $red;
+   text-decoration: none;
+  }
+}
+
+.ghost-btn:hover {
+  opacity: 1;
+  border-radius: 50px;
+  border: 3px solid $orange;
+  a {
+    font-weight: bold;
+    color: $orange;
+    text-decoration: none;
+  }
+}
+
+#banner-btn {
+  margin-left: 45px;
+}
+
+.btn-form {
+  text-align: center;
+  color: $white;
+  padding: 8px 24px;
+  border-radius: 6px;
+  font-weight: bold;
+  background: linear-gradient($green, $blue-green);
+  transition: background 0.3s ease;
+  border: 1px solid $dark-blue;
+}
+
+ .btn-form:hover {
+  background: linear-gradient($blue-green, $blue);
+  color: $white;
+}
+
+#show-buttons {
+  display: flex;
+  margin: 0 auto;
+  justify-content: space-between;
+  padding-top: 30px;
+  width: 40%;
+}
+
+.show-btn {
+  flex-grow: 0;
+}
+
+#add-ing-btn {
+  margin-top: 12px;
+  display: flex;
+  justify-content: center;
+}
+
+#back-btn {
+  padding-top: 24px;
+  display: flex;
+  justify-content: center;
+}

@@ -1,1 +1,33 @@
 // Specific CSS for your home-page
+.menu {
+  padding-top: 24px;
+  background-color: $gray;
+  height: 100vh;
+}
+
+h1 {
+  font-size: 42px;
+}
+
+h1, h2 {
+  text-align: center;
+  font-weight: bold;
+  color: $blue-green;
+}
+
+p {
+  color: $blue-green;
+  font-weight: bold;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  &:hover {
+  text-decoration: none;
+  }
+}
+
+.ingredients a {
+  color: $white;
+}

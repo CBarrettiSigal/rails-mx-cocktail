@@ -1,9 +1,21 @@
-<div class="container input-form">
-    <%= simple_form_for [@cocktail, @dose] do |f| %>
-    <%= f.input :description %>
-    <%= f.input :ingredient_id, collection: Ingredient.all %>
-    <%= f.submit "Add Your Dose!", class: "btn btn-success" %>
-  <% end %>
+<!-- <div class="bg-img"> -->
+  <div class="container">
+      <div class="input-form">
+    <h1><%= @cocktail.name %></h1>
+          <%= simple_form_for [@cocktail, @dose] do |f| %>
+            <%= f.input :description, label:"Number and Unit of Measurement for Your Ingredient" %>
+            <%= f.input :ingredient_id, label:"Pick Ingredient", collection: Ingredient.all %>
+          <div>
+            <%= f.submit "Add Your Ingredient", class: "btn-form" %>
+          </div>
+        <% end %>
+      </div>
+      <div id="back-btn">
+        <div  class="ghost-btn">
+          <%= link_to "Back to Cocktail Menu", cocktails_path %>
+        </div>
+      </div>
+    </div>
+<!-- </div> -->
 
-  <%= link_to "Go Back to Cocktail Menu", cocktails_path, class: "btn btn-primary" %>
-</div>
+

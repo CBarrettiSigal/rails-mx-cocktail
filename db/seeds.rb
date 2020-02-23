@@ -8,15 +8,19 @@ require 'open-uri'
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
-# Ingredient.destroy_all
+Cocktail.destroy_all
+Ingredient.destroy_all
 
   url = 'https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list'
   list = JSON.parse(open(url).read)
 
- list["drinks"].each do |ing|
+ new_list = list["drinks"].map do |ingredient|
+  ingredient['strIngredient1']
+ end
+
+ new_list.sort.each do |ing|
    # puts ing['strIngredient1']
- Ingredient.create(name: ing['strIngredient1'])
+ Ingredient.create(name: ing)
  end
 
 

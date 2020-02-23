@@ -1,0 +1,49 @@
+.container {
+  margin: auto;
+  padding: 200px 0 0 0;
+  h1 {
+    padding-bottom: 35px;
+  }
+}
+
+.invalid-feedback {
+  color: $yellow;
+  font-size: 12px;
+}
+
+.input-form {
+  border-radius: 10px;
+  background: $gray;
+  width: 500px;
+  margin: auto;
+  // height: 225px;
+  padding: 16px  ;
+  opacity: .87;
+  border: 1px solid $dark-blue;
+}
+
+.input-form h1, h3, h6 {
+  padding: 8px 0;
+  opacity: 1;
+  color: $orange;
+  text-align: center;
+}
+
+.input-form h6 {
+  font-weight: bold;
+}
+
+.input-form {
+  color: $orange;
+  font-weight: bold;
+
+}
+
+#new-cocktail-btn {
+  display: flex;
+  justify-content: center;
+
+  div {
+    width: 45%;
+  }
+}

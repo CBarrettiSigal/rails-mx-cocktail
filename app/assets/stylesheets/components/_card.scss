@@ -1,25 +1,67 @@
 .cocktail-cards {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  margin: 0 32px 0 32px;
 }
 
 .cocktail-card {
-  margin: 16px 24px;
-  background-size: fit;
-  background-position: center;
-  height: 180px;
   display: flex;
+  min-height: 320px;
+  margin: 24px 32px;
+  background-size: cover;
+  background-position: center;
+  object-fit: cover;
+  height: 180px;
   justify-content: center;
   align-items: center;
-  color: white;
   font-size: 24px;
   font-weight: bold;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    a, h2 {
+      text-decoration: none;
+      color: #5fe3e8;
+  }
+}
+
+.recipe-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $gray;
+  margin: 24px auto;
+  min-width: 350px;
+  width: 40vw;
+  padding: 40px;
+  opacity: .85;
+  border: 1px solid $gray;
+  border-radius: 5px;
+  .fa-arrow-circle-left {
+    margin-top: 25px;
+    color: $white;
+    font-size: 32px;
+  }
+}
+
+.cocktail-photo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+   img {
+    margin: 24px 32px;
+    height: auto;
+    width: 75%;
+    font-weight: bold;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  }
 }
 
 .cocktail-card a {
-  color: green;
+  color: $green;
+}
+
+.cocktail-card:hover a {
+  color: $orange;
 }

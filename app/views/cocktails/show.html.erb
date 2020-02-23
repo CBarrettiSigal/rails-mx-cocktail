@@ -1,10 +1,32 @@
-<h1><%= @cocktail.name %></h1>
-<% @cocktail.doses.each do |dose| %>
-<h3><%= dose.description %> <%= dose.ingredient.name %></h3>
-<div font-size= 20px>
-<%= link_to "Remove This from Your Recipe", dose_path(dose), method: "delete" %>
+<!-- <div class="container"> -->
+  <div class="recipe-card">
+    <h1><%= @cocktail.name %></h1>
+      <!-- <div id="cocktail-img"></div> -->
+
+        <div class="cocktail-photo">
+          <% if @cocktail.photo.attached? %>
+            <%= cl_image_tag @cocktail.photo.key, crop: :fill %>
+          <% else %>
+            <img src="https://source.unsplash.com/collection/9282742/<%= rand(1..150) %>" alt="A Random Artsy Cocktail Photo">
+          <% end %>
+        </div>
+
+      <% @cocktail.doses.each do |dose| %>
+      <div class="ingredients">
+        <p><%= dose.description %> <%= dose.ingredient.name %>   <%= link_to dose_path(dose), method: "delete" do %>
+          <i class="fas fa-trash"></i>
+          <% end %></p>
+        <p>
+        </p>
+      </div>
+    <% end %>
+      <div id="add-ing-btn">
+        <%= link_to "Add Ingredients to Your Cocktail!", new_cocktail_dose_path(@cocktail.id), class: "btn-form" %>
+      </div>
+      <%= link_to "Get Rid of This Cocktail Altogether", cocktail_path, method: "delete", class: "btn-form show-btn" %>
+      <%= link_to "Make Another Cocktail", new_cocktail_path, class: "btn-form show-btn" %>
+        <%= link_to cocktails_path do %>
+        <i class="fas fa-arrow-circle-left"></i>
+        <% end %>
   </div>
-<% end %>
-<h2><%= link_to "Add Ingredients to Your Cocktail!", new_cocktail_dose_path(@cocktail.id) %></h2>
-<p><%= link_to "Get Rid of This Cocktail Altogether", cocktail_path, method: "delete" %></p>
-<p><%= link_to "Make Another Cocktail", new_cocktail_path %></p>
+<!-- </div> -->

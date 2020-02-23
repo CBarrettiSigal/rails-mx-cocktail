@@ -1,4 +1,8 @@
 class CocktailsController < ApplicationController
+
+  def home
+  end
+
   def index
     @cocktails = Cocktail.all
   end
@@ -9,8 +13,11 @@ class CocktailsController < ApplicationController
 
   def create
     @cocktail = Cocktail.new(cocktail_params)
-    @cocktail.save
-    redirect_to cocktail_path(@cocktail)
+    if @cocktail.save
+      redirect_to cocktail_path(@cocktail)
+    else
+      render :new
+    end
     # new_cocktail_dose_path(@cocktail.id) <-- tried to put both forms on the same page
   end
 

@@ -1,7 +1,23 @@
-<h1>Create a New Cocktail!</h1>
-<%= simple_form_for @cocktail do |f| %>
-  <%= f.input :name %>
-  <%= f.input :photo, as: :file %>
-  <%= f.submit "Name Your Cocktail", class: "btn btn-success" %>
-<% end %>
+<div class="bg-img">
+  <div class="container">
+    <div class="input-form">
+    <h1>Create a New Cocktail.</h1>
+    <h3>Give it an awesome name and upload a picture!</h3>
+    <h6>If you don't have a picture, an artsy one will be chosen at random from the internet.</h6>
+      <%= simple_form_for @cocktail do |f| %>
+        <%= f.input :name %>
+        <div id="new-cocktail-btn">
+          <label class="btn-form" >
+            Upload Image
+            <div class="d-none"><%= f.input :photo, as: :file %></div>
+          </label>
+        </div>
+        <div class="text-center">
+          <%= f.button :submit , "Add Ingredients", class: "btn-form"%>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
 
