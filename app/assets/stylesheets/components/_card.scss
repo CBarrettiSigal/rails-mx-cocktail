@@ -27,16 +27,22 @@
   }
 }
 
+@media(max-width: 768px) {
+  .cocktail-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
 .recipe-card {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  background-color: $gray;
-  margin: 24px auto;
+  background-color: rgba(49, 62, 80, 0.75);
+  margin: 0 auto;
   min-width: 350px;
   width: 40vw;
   padding: 40px;
-  opacity: .85;
   border: 1px solid $gray;
   border-radius: 5px;
   .fa-arrow-circle-left {
@@ -67,3 +73,4 @@
 .cocktail-card:hover a {
   color: $orange;
 }
+

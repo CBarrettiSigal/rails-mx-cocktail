@@ -1,9 +1,10 @@
-<!-- <div class="bg-img"> -->
+<div class="bg-img">
+
   <div class="container">
       <div class="input-form">
     <h1><%= @cocktail.name %></h1>
           <%= simple_form_for [@cocktail, @dose] do |f| %>
-            <%= f.input :description, label:"Number and Unit of Measurement for Your Ingredient" %>
+            <%= f.input :description, placeholder: 'i.e. "6 oz", "75 cl", or "ALL of..."', label:"Number and Unit of Measurement for Your Ingred" %>
             <%= f.input :ingredient_id, label:"Pick Ingredient", collection: Ingredient.all %>
           <div>
             <%= f.submit "Add Your Ingredient", class: "btn-form" %>
@@ -16,6 +17,6 @@
         </div>
       </div>
     </div>
-<!-- </div> -->
+</div>
 
 
